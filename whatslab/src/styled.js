@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import planoDeFundo from "./img/plano-de-fundo.jpg"
 export const Container = styled.div`
   display: flex;
   border: 1px solid;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-direction: column-reverse;
   margin: 0 auto;
   padding: 0;
-  background-color: #e7ddd7;
+  background-image: url(${planoDeFundo});
   box-sizing: border-box;
 `;
  export const InputsDiv = styled.div`
@@ -67,7 +67,7 @@ export const Mensagens = styled.div`
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
   
   background-color: ${props => {
-        if (props.tipo.toLowerCase() === "eu") {
+        if (props.tipo === "eu") {
             return "#DDF7C8" // Verde copiado do WhatsApp
         } else {
             return "#ffffff" // Branco
@@ -75,7 +75,7 @@ export const Mensagens = styled.div`
     }};
  
  align-self:  ${props => {
-        if (props.tipo.toLowerCase() === "eu") {
+        if (props.tipo === "eu") {
             return "flex-end"
         } else {
             return "flex-start"
@@ -84,6 +84,7 @@ export const Mensagens = styled.div`
 
 `;
 export const DivMensagens = styled.div `
+box-sizing: border-box;
 overflow-y: auto;
 ::-webkit-scrollbar {
   display: none;}
