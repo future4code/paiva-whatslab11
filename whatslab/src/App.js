@@ -49,7 +49,7 @@ doubleClickApagar = (idPost) =>{
 }
 render () {
   const chat = this.state.mensagens.map((msg)=> {
-    if (msg.nome === "eu") {
+    if (msg.nome.toLowerCase() === "eu") {
               return (
                 <Mensagens tipo={"eu"} key={msg.id} onDoubleClick={()=>{this.doubleClickApagar(msg.id)}}>
                   <BalaoDeMensagem tipo={"eu"}>
