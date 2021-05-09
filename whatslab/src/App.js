@@ -1,12 +1,21 @@
 import React, { useState } from "react";
 import img from "./img/enviar.png"
-import {Container, InputsDiv, InputTexts ,Button, ImgButton, Mensagens, BalaoDeMensagem} from "./styled"
+import {Container, InputsDiv, InputTexts ,Button, ImgButton, Mensagens, BalaoDeMensagem, DivMensagens} from "./styled"
 
 class App extends React.Component{
   state = {
-    mensagens: [{id:1, nome:"Daniel", mensagem: "Estou na esquerda!"},{id:Date.now(), nome:"eu", mensagem: "Estou na direita!"}],
+    mensagens: [
+      {id:1, nome:"Lais Petra", mensagem: "Que legaaal! Vcs crescem a cada dia! Que orgulhoooo"},
+      {id:2, nome:"Amanda Rangel", mensagem: "Turma linda e muito querida!!❤️"},
+      {id:3, nome:"eu", mensagem: "Tá ficando bacana xD"},
+      {id:4, nome:"Caio Teixeira", mensagem: "Estão mandando bem nas funções"},
+      {id:5, nome:"Índio Medeiros", mensagem: "É tudo uma questão de visão holística🤓"},
+      {id:6, nome:"Letícia Chijo", mensagem: "Geeente Front é demais né???"},
+      {id:7, nome:"eu", mensagem: "Suuuper legal! Ajustado para diferentes telas inclusive hahaha"}
+
+  ],
     inputName:"",
-    inputMsg: "",
+    inputMsg: ""
   };
   handleName = (event) => {
     this.setState({ inputName: event.target.value });
@@ -14,12 +23,18 @@ class App extends React.Component{
   handleMsg = (event) => {
       this.setState({ inputMsg: event.target.value });
   }
+  onEnterEnviar = (event) =>{
+    if (event.key ==="Enter"){
+      this.onClickEnviar();
+    }
+  }
+  
   onClickEnviar = () =>{
     const novaMsg = {id: Date.now(), nome:this.state.inputName, mensagem: this.state.inputMsg}    
     this.setState({
       mensagens: [...this.state.mensagens,novaMsg],
       inputName:"",
-      inputMsg: "",
+      inputMsg: ""
     })
   }
 doubleClickApagar = (idPost) =>{
@@ -66,11 +81,11 @@ render () {
           placeholder={"Mensagem"}
           value={this.state.inputMsg}
           onChange={this.handleMsg}
-          
+          onKeyPress = {this.onEnterEnviar}
         />
         <Button onClick={this.onClickEnviar}><ImgButton src={img}/></Button>
       </InputsDiv>
-      <div>{chat}</div>
+      <DivMensagens>{chat}</DivMensagens>
       </Container>
   );
 }

@@ -46,7 +46,7 @@ export const Mensagens = styled.div`
   display: flex;
   flex-direction: column;
   text-align: ${props => {
-        if (props.tipo === "eu") {
+        if (props.tipo.toLowerCase() === "eu") {
             return "right"
         } else {
             return "left"
@@ -67,7 +67,7 @@ export const Mensagens = styled.div`
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
   
   background-color: ${props => {
-        if (props.tipo === "eu") {
+        if (props.tipo.toLowerCase() === "eu") {
             return "#DDF7C8" // Verde copiado do WhatsApp
         } else {
             return "#ffffff" // Branco
@@ -75,7 +75,7 @@ export const Mensagens = styled.div`
     }};
  
  align-self:  ${props => {
-        if (props.tipo === "eu") {
+        if (props.tipo.toLowerCase() === "eu") {
             return "flex-end"
         } else {
             return "flex-start"
@@ -83,3 +83,8 @@ export const Mensagens = styled.div`
     }};
 
 `;
+export const DivMensagens = styled.div `
+overflow-y: auto;
+::-webkit-scrollbar {
+  display: none;}
+`
