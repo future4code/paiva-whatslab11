@@ -2,7 +2,7 @@ Projeto Whatslab
 
 Integrantes: Daniel Ueno e Fabrícia Anna
 
-Link do Surge: special-thrill.surge.sh
+Link do Surge: http://special-thrill.surge.sh
 
 Funcionalidades: 
 - duplo clique apaga mensagem clicada
